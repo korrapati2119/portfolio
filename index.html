@@ -8,51 +8,85 @@
 
     <style>
         body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Segoe UI", Tahoma, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            background: linear-gradient(135deg, #dcdcdc, #f7f7f7);
             color: #333;
         }
 
         .container {
+            width: 90%;
             max-width: 900px;
-            margin: 40px auto;
+            margin: 50px auto;
             padding: 20px 30px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         h1 {
-            color: #0077b6;
+            text-align: center;
+            color: #005b8f;
             margin-bottom: 5px;
         }
 
-        h2 {
-            color: #0077b6;
-            margin-top: 30px;
-            border-bottom: 2px solid #0077b6;
-            padding-bottom: 5px;
+        .contact {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        p, li {
-            font-size: 1rem;
-            line-height: 1.6;
+        .contact a {
+            color: #005b8f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* TAB STYLING */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .tab.active {
+            background: #005b8f;
+            color: white;
+        }
+
+        .tab:hover {
+            background: #0077b6;
+            color: white;
+        }
+
+        .content-section {
+            display: none;
+            padding: 20px 0;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #005b8f;
+            margin-top: 10px;
+            border-left: 5px solid #005b8f;
+            padding-left: 10px;
         }
 
         ul {
             padding-left: 20px;
-        }
-
-        .contact a {
-            color: #0077b6;
-            text-decoration: none;
-        }
-
-        .header-section {
-            text-align: center;
-            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -61,82 +95,110 @@
 
     <div class="container">
 
-        <!-- Header -->
-        <div class="header-section">
-            <h1>Venkata Kishore Korrapati</h1>
-            <p>
-                Email: <a href="mailto:kvkishore024@gmail.com">kvkishore024@gmail.com</a> |
-                Phone: 660-528-2896 <br>
-                LinkedIn: <a href="https://www.linkedin.com/in/venkata-kishore-korrapati/" target="_blank">View Profile</a> |
-                GitHub: <a href="https://github.com/korrapati2119" target="_blank">korrapati2119</a>
+        <h1>Venkata Kishore Korrapati</h1>
+
+        <div class="contact">
+            Email: <a href="mailto:kvkishore024@gmail.com">kvkishore024@gmail.com</a> |
+            Phone: 660-528-2896 <br>
+            LinkedIn: <a href="https://www.linkedin.com/in/venkata-kishore-korrapati/" target="_blank">Profile</a> |
+            GitHub: <a href="https://github.com/korrapati2119" target="_blank">GitHub</a>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('education')">Education</div>
+            <div class="tab" onclick="showTab('skills')">Skills</div>
+            <div class="tab" onclick="showTab('projects')">Projects</div>
+            <div class="tab" onclick="showTab('internship')">Internship</div>
+            <div class="tab" onclick="showTab('achievements')">Achievements</div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div id="education" class="content-section active">
+            <h2>Education</h2>
+
+            <p><strong>Master of Science in Applied Computer Science</strong><br>
+                Northwest Missouri State University, USA — <em>Expected Graduation: 2025</em><br>
+                <strong>Relevant Coursework:</strong> Web Apps & Servers, OOP in Java, Advanced Database Topics,
+                Design Patterns & Frameworks, iOS Development, Project Management, Data Visualization,
+                Generative AI.
+            </p>
+
+            <p><strong>Bachelor of Technology in Information Technology</strong><br>
+                RVR & JC College of Engineering, India — <em>Graduated: 2023</em><br>
+                <strong>Key Coursework:</strong> Data Structures, Operating Systems, Cybersecurity, AI, ML, DBMS,
+                Web Technologies, .NET, Compiler Design.
+            </p>
+
+            <p><strong>Diploma in Computer Engineering</strong><br>
+                MBTS Govt Polytechnic College, India — <em>Graduated: 2020</em><br>
+                <strong>Industrial Training:</strong> CISCO Networking Training
             </p>
         </div>
 
-        <!-- Education -->
-        <h2>Education</h2>
+        <!-- SKILLS -->
+        <div id="skills" class="content-section">
+            <h2>Technical Skills</h2>
 
-        <p><strong>Master of Science in Applied Computer Science</strong><br>
-            Northwest Missouri State University, USA — <em>Expected Graduation: 2025</em><br>
-            <strong>Relevant Coursework:</strong> Web Apps & Servers, OOP in Java, Advanced Database Topics,
-            Design Patterns & Frameworks, iOS Development, Project Management & Business Technology,
-            Data Visualization, Generative AI for Technologists.
-        </p>
+            <ul>
+                <li><strong>Programming:</strong> Java, Python, C, C#, JavaScript, SQL</li>
+                <li><strong>Web & Frameworks:</strong> HTML, CSS, PHP, React, Node.js, .NET</li>
+                <li><strong>Databases:</strong> MySQL, SQL, Advanced Database Topics</li>
+                <li><strong>Tools & Platforms:</strong> Git, Docker, Linux, Xcode</li>
+                <li><strong>Cybersecurity:</strong> VAPT, Malware Analysis, Network Security, OSINT</li>
+                <li><strong>Certifications:</strong> NPTEL — Data Analytics with Python, Soft Skills</li>
+            </ul>
+        </div>
 
-        <p><strong>Bachelor of Technology in Information Technology</strong><br>
-            RVR & JC College of Engineering, India — <em>Graduated: 2023</em><br>
-            (Entered via Lateral Entry after Diploma)<br>
-            <strong>Key Coursework:</strong> Data Structures, OOP, Operating Systems, DBMS, Computer Networks,
-            AI, ML, Cybersecurity, Compiler Design, Web Technologies, .NET Technologies.
-        </p>
+        <!-- PROJECTS -->
+        <div id="projects" class="content-section">
+            <h2>Projects</h2>
 
-        <p><strong>Diploma in Computer Engineering</strong><br>
-            MBTS Government Polytechnic College, India — <em>Graduated: 2020</em><br>
-            <strong>Industrial Training:</strong> CISCO Networking Training
-        </p>
+            <p><strong>Smart Banking Web Application</strong><br>
+                - Secure banking platform with authentication and transaction management.<br>
+                <strong>Tech Stack:</strong> HTML, CSS, JS, PHP, MySQL
+            </p>
 
-        <!-- Technical Skills -->
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Programming:</strong> Java, Python, C, C#, JavaScript, SQL</li>
-            <li><strong>Web & Frameworks:</strong> HTML, CSS, PHP, React, Node.js, .NET</li>
-            <li><strong>Databases:</strong> MySQL, SQL, Advanced Database Topics</li>
-            <li><strong>Tools & Platforms:</strong> Git, Docker, Linux, Xcode, VS Code</li>
-            <li><strong>Cybersecurity:</strong> VAPT, Malware Analysis, Network Security, OSINT</li>
-            <li><strong>Certifications:</strong> NPTEL — Data Analytics with Python, NPTEL — Soft Skills</li>
-        </ul>
+            <p><strong>Digital Image Security Using Hybrid Model</strong><br>
+                - Implemented encryption/decryption for secure image transmission.<br>
+                <strong>Tech Stack:</strong> Python, Cryptography, Image Processing
+            </p>
+        </div>
 
-        <!-- Projects -->
-        <h2>Projects</h2>
+        <!-- INTERNSHIP -->
+        <div id="internship" class="content-section">
+            <h2>Internship Experience</h2>
 
-        <p><strong>Smart Banking Web Application</strong> (3rd Year, 6th Semester)<br>
-            Developed a secure web platform for account creation, login authentication and transaction management.<br>
-            <strong>Tech Stack:</strong> HTML, CSS, JavaScript, PHP, MySQL
-        </p>
+            <p><strong>Web Application Penetration Testing Intern</strong><br>
+                Indian Servers, India — <em>[Month Year] to [Month Year]</em><br>
+                - Performed Automated & Manual VAPT.<br>
+                - Conducted Web Security Audits.<br>
+                - Worked on Malware Analysis, Network Security, OSINT, Sniffing, Scanning, Mobile Security.
+            </p>
+        </div>
 
-        <p><strong>Digital Image Security Using Hybrid Model</strong> (8th Semester)<br>
-            Implemented encryption & decryption model for secure digital image transmission.<br>
-            <strong>Tech Stack:</strong> Python, Cryptography, Image Processing
-        </p>
-
-        <!-- Internship -->
-        <h2>Internship Experience</h2>
-
-        <p><strong>Web Application Penetration Testing Intern</strong><br>
-            Indian Servers, India — <em>[Start Month Year] to [End Month Year]</em><br>
-            - Performed Automated & Manual VAPT on web applications.<br>
-            - Conducted Web Security Audits and identified vulnerabilities.<br>
-            - Hands-on experience in Malware Analysis, Network Security, OSINT, Sniffing, Network Scanning, Mobile Security.
-        </p>
-
-        <!-- Achievements -->
-        <h2>Achievements & Certifications</h2>
-        <ul>
-            <li>NPTEL — Data Analytics with Python</li>
-            <li>NPTEL — Soft Skills Certification</li>
-            <li>CISCO Networking Industrial Training</li>
-        </ul>
+        <!-- ACHIEVEMENTS -->
+        <div id="achievements" class="content-section">
+            <h2>Achievements & Certifications</h2>
+            <ul>
+                <li>NPTEL — Data Analytics with Python</li>
+                <li>NPTEL — Soft Skills</li>
+                <li>CISCO Networking Industrial Training</li>
+            </ul>
+        </div>
 
     </div>
+
+    <!-- TAB SCRIPT -->
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
 
 </body>
 
